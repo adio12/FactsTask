@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         
         let nav = UINavigationController()
-        nav.isNavigationBarHidden = true
+//        nav.isNavigationBarHidden = true
         
         let factsVC = FactsViewController()
         nav.viewControllers = [factsVC]
