@@ -20,6 +20,10 @@
 		199B89CD20EA5D48007F3A0B /* FactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89C420EA5D47007F3A0B /* FactModel.swift */; };
 		199B89CE20EA5D48007F3A0B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89C520EA5D47007F3A0B /* Networking.swift */; };
 		199B89CF20EA5D48007F3A0B /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89C620EA5D47007F3A0B /* WebServices.swift */; };
+		19ED060020EA62A9009EA7D3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ED05FF20EA62A9009EA7D3 /* Constant.swift */; };
+		19ED060420EA657E009EA7D3 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ED060220EA657E009EA7D3 /* Reach.swift */; };
+		19ED060520EA657E009EA7D3 /* Reachablity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ED060320EA657E009EA7D3 /* Reachablity.swift */; };
+		19ED060720EA6613009EA7D3 /* CommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ED060620EA6613009EA7D3 /* CommonMethods.swift */; };
 		20E394A8534B11B5AD6D0705 /* Pods_FactsTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A04DBF19FFF43D0B6970F4 /* Pods_FactsTaskTests.framework */; };
 		B57CD56D11647945AA5B2C8B /* Pods_FactsTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96505B2A1FAF77A8340DC4F0 /* Pods_FactsTask.framework */; };
 		B66D1B57F4813469AD6BAD8F /* Pods_FactsTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 191E55B45437BDC00B62DCF7 /* Pods_FactsTaskUITests.framework */; };
@@ -62,6 +66,10 @@
 		199B89C420EA5D47007F3A0B /* FactModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactModel.swift; sourceTree = "<group>"; };
 		199B89C520EA5D47007F3A0B /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		199B89C620EA5D47007F3A0B /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
+		19ED05FF20EA62A9009EA7D3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		19ED060220EA657E009EA7D3 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
+		19ED060320EA657E009EA7D3 /* Reachablity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachablity.swift; sourceTree = "<group>"; };
+		19ED060620EA6613009EA7D3 /* CommonMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMethods.swift; sourceTree = "<group>"; };
 		436BF61558EDF7DE310D5C2C /* Pods-FactsTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FactsTaskTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FactsTaskTests/Pods-FactsTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		43CA66F9F81B38CE5B8E614C /* Pods-FactsTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FactsTaskUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FactsTaskUITests/Pods-FactsTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		63A04DBF19FFF43D0B6970F4 /* Pods_FactsTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FactsTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,7 +186,10 @@
 		199B89B920EA5D47007F3A0B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				19ED060120EA657E009EA7D3 /* Reachablity */,
 				199B89BA20EA5D47007F3A0B /* AppManager.swift */,
+				19ED05FF20EA62A9009EA7D3 /* Constant.swift */,
+				19ED060620EA6613009EA7D3 /* CommonMethods.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -233,6 +244,15 @@
 				199B89C420EA5D47007F3A0B /* FactModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		19ED060120EA657E009EA7D3 /* Reachablity */ = {
+			isa = PBXGroup;
+			children = (
+				19ED060220EA657E009EA7D3 /* Reach.swift */,
+				19ED060320EA657E009EA7D3 /* Reachablity.swift */,
+			);
+			path = Reachablity;
 			sourceTree = "<group>";
 		};
 		3FE468C575D843080D6A80F6 /* Frameworks */ = {
@@ -540,10 +560,14 @@
 			files = (
 				199B89CB20EA5D48007F3A0B /* FactViewModel.swift in Sources */,
 				199B896920E9F580007F3A0B /* AppDelegate.swift in Sources */,
+				19ED060520EA657E009EA7D3 /* Reachablity.swift in Sources */,
+				19ED060720EA6613009EA7D3 /* CommonMethods.swift in Sources */,
+				19ED060020EA62A9009EA7D3 /* Constant.swift in Sources */,
 				199B89C920EA5D48007F3A0B /* AppManager.swift in Sources */,
 				199B89CD20EA5D48007F3A0B /* FactModel.swift in Sources */,
 				199B89CA20EA5D48007F3A0B /* FactTableCell.swift in Sources */,
 				199B89CC20EA5D48007F3A0B /* FactsViewController.swift in Sources */,
+				19ED060420EA657E009EA7D3 /* Reach.swift in Sources */,
 				199B89CF20EA5D48007F3A0B /* WebServices.swift in Sources */,
 				199B89CE20EA5D48007F3A0B /* Networking.swift in Sources */,
 			);

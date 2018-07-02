@@ -14,6 +14,16 @@ class Networking {
     
     class func Get(urlString: String, successBlock :@escaping (JSON)->(), errorBlock : @escaping (Error)->())  {
         
+        if let isReachable = Reachability.init()?.isReachable, !isReachable {
+            
+            let error  = CommonMethods.getErrorObj(Constant.kNoNetworkConnection)
+            errorBlock(error)
+            
+            return
+        }
+            
+
+        
         let url = URL(string: urlString)
         var urlRequest = URLRequest(url: url!)
         
@@ -68,6 +78,15 @@ class Networking {
     class func download(urlString : String, successBlock :@escaping (URL)->(), errorBlock :@escaping (Error)->()) {
         
         guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        
+        if let isReachable = Reachability.init()?.isReachable, !isReachable {
+            
+            let error  = CommonMethods.getErrorObj(Constant.kNoNetworkConnection)
+            errorBlock(error)
+            
             return
         }
         
