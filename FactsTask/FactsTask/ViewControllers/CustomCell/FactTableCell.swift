@@ -9,11 +9,11 @@
 import UIKit
 
 class FactTableCell: UITableViewCell {
-
     
     var titleLabel = UILabel()
     var descriptionLabel = UILabel()
     var imgView = UIImageView()
+    var imgUrl: String!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +23,7 @@ class FactTableCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.selectionStyle = .none
         setupSubviews()
         addConstraint()
     }
@@ -64,6 +65,25 @@ class FactTableCell: UITableViewCell {
         titleLabel.text = info.title ?? "Untitled"
         descriptionLabel.text = info.description
         imgView.backgroundColor = UIColor.lightGray
+        
+        if let urlString = info.imgURL, !urlString.isEmpty {
+            self.imgUrl = urlString
+        }
+    }
+    
+    func displayImage() {
+        
+        if let urlString = imgUrl, !urlString.isEmpty {
+            DispatchQueue.global(qos: .background).async {
+                //"This is run on the background queue"
+                WebServices.getImageFromURL(urlString: urlString, completionBlock: { (img) in
+                    DispatchQueue.main.async {
+                        //"This is run on the main queue"
+                        self.imgView.image = img
+                    }
+                })
+            }
+        }
     }
     
     private func addConstraint() {

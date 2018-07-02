@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import UIKit
 
 class Networking {
     
@@ -62,6 +63,31 @@ class Networking {
         }
         task.resume()
     }
+    
+    class func download(urlString : String, successBlock :@escaping (URL)->(), errorBlock :@escaping (Error)->()) {
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        let configuration = URLSessionConfiguration.default
+        let urlSession = URLSession(configuration: configuration)
+        
+        let downloadTask = urlSession.downloadTask(with: url) { (fileUrl, urlResp, error) in
+            
+            if let err = error {
+                errorBlock(err)
+            } else {
+                if let url = fileUrl {
+                    successBlock (url)
+                }
+            }
+        }
+        downloadTask.resume()
+
+    }
+    
+
     
     private class func convertStringToJson(str: String, error: Error) ->  (Any?, Error?){
         if let dataObj = str.data(using: String.Encoding.utf8) {

@@ -12,22 +12,26 @@ class FactsViewController: UIViewController {
     
     var tableView : UITableView!
     var factList = [FactsModel]()
+    
+    var refreshControl = UIRefreshControl()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
         getList()
         
         tableView = UITableView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height - 64))
         
         self.view.addSubview(tableView)
-        tableView.estimatedRowHeight = 60
-        
+        tableView.estimatedRowHeight = 150
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(reloadTableData), for: UIControlEvents.valueChanged)
+        tableView.allowsSelection = false
+        tableView.register(FactTableCell.self, forCellReuseIdentifier: "cell")
+
         tableView.delegate = self
         tableView.dataSource = self
-        let cell = FactTableCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        tableView.register(FactTableCell.self, forCellReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,12 +39,14 @@ class FactsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @objc func reloadTableData(){
+        getList()
+    }
+    
     func getList() {
         WebServices.getFactList(completionBlock: { (listModel) in
-            
-            print(listModel.title)
-            
             DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
                 self.title = listModel.title ?? ""
                 
                 if let list = listModel.rowList {
@@ -50,6 +56,7 @@ class FactsViewController: UIViewController {
 
             }
         }) { (error) in
+            self.refreshControl.endRefreshing()
             print(error.localizedDescription)
         }
     }
@@ -63,12 +70,18 @@ extension FactsViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let model = factList[indexPath.row]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? FactTableCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FactTableCell else {
             return UITableViewCell()
         }
         cell.configureCell(with: model)
+        cell.displayImage()
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250
     }
 }
 
