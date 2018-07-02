@@ -24,13 +24,12 @@ class FactsViewController: UIViewController {
         getList()
         
         tableView = UITableView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height - 64))
-        
         self.view.addSubview(tableView)
-        tableView.estimatedRowHeight = 150
+        tableView.estimatedRowHeight = 150 
         tableView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(reloadTableData), for: UIControlEvents.valueChanged)
         tableView.allowsSelection = false
-        tableView.register(FactTableCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(FactTableCell.self, forCellReuseIdentifier: Constant.factCellIdentifier)
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -74,7 +73,7 @@ extension FactsViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FactTableCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.factCellIdentifier, for: indexPath) as? FactTableCell else {
             return UITableViewCell()
         }
         cell.setDataSource(datasource: self, index: indexPath.row)
