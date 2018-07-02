@@ -8,17 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		199B896920E9F580007F3A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B896820E9F580007F3A0B /* AppDelegate.swift */; };
-		199B897020E9F580007F3A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199B896F20E9F580007F3A0B /* Assets.xcassets */; };
 		199B897320E9F580007F3A0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199B897120E9F580007F3A0B /* LaunchScreen.storyboard */; };
 		199B897E20E9F580007F3A0B /* FactsTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B897D20E9F580007F3A0B /* FactsTaskTests.swift */; };
 		199B898920E9F580007F3A0B /* FactsTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B898820E9F580007F3A0B /* FactsTaskUITests.swift */; };
-		199B89A120EA0554007F3A0B /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89A020EA0554007F3A0B /* FactsViewController.swift */; };
-		199B89A320EA064B007F3A0B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89A220EA064B007F3A0B /* Networking.swift */; };
-		199B89A520EA0660007F3A0B /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89A420EA0660007F3A0B /* WebServices.swift */; };
-		199B89A720EA1750007F3A0B /* FactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89A620EA1750007F3A0B /* FactModel.swift */; };
-		199B89AC20EA3297007F3A0B /* FactTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89AB20EA3297007F3A0B /* FactTableCell.swift */; };
-		199B89AE20EA38EB007F3A0B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89AD20EA38EB007F3A0B /* AppManager.swift */; };
-		199B89B020EA562D007F3A0B /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89AF20EA562D007F3A0B /* FactViewModel.swift */; };
+		199B89C720EA5D48007F3A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199B89B720EA5D47007F3A0B /* Assets.xcassets */; };
+		199B89C820EA5D48007F3A0B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 199B89B820EA5D47007F3A0B /* Info.plist */; };
+		199B89C920EA5D48007F3A0B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89BA20EA5D47007F3A0B /* AppManager.swift */; };
+		199B89CA20EA5D48007F3A0B /* FactTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89BF20EA5D47007F3A0B /* FactTableCell.swift */; };
+		199B89CB20EA5D48007F3A0B /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89C020EA5D47007F3A0B /* FactViewModel.swift */; };
+		199B89CC20EA5D48007F3A0B /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89C120EA5D47007F3A0B /* FactsViewController.swift */; };
+		199B89CD20EA5D48007F3A0B /* FactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89C420EA5D47007F3A0B /* FactModel.swift */; };
+		199B89CE20EA5D48007F3A0B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89C520EA5D47007F3A0B /* Networking.swift */; };
+		199B89CF20EA5D48007F3A0B /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89C620EA5D47007F3A0B /* WebServices.swift */; };
 		20E394A8534B11B5AD6D0705 /* Pods_FactsTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A04DBF19FFF43D0B6970F4 /* Pods_FactsTaskTests.framework */; };
 		B57CD56D11647945AA5B2C8B /* Pods_FactsTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96505B2A1FAF77A8340DC4F0 /* Pods_FactsTask.framework */; };
 		B66D1B57F4813469AD6BAD8F /* Pods_FactsTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 191E55B45437BDC00B62DCF7 /* Pods_FactsTaskUITests.framework */; };
@@ -45,22 +46,22 @@
 		191E55B45437BDC00B62DCF7 /* Pods_FactsTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FactsTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		199B896520E9F580007F3A0B /* FactsTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FactsTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		199B896820E9F580007F3A0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		199B896F20E9F580007F3A0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		199B897220E9F580007F3A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		199B897420E9F580007F3A0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		199B897920E9F580007F3A0B /* FactsTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FactsTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		199B897D20E9F580007F3A0B /* FactsTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsTaskTests.swift; sourceTree = "<group>"; };
 		199B897F20E9F580007F3A0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		199B898420E9F580007F3A0B /* FactsTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FactsTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		199B898820E9F580007F3A0B /* FactsTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsTaskUITests.swift; sourceTree = "<group>"; };
 		199B898A20E9F580007F3A0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		199B89A020EA0554007F3A0B /* FactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
-		199B89A220EA064B007F3A0B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		199B89A420EA0660007F3A0B /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
-		199B89A620EA1750007F3A0B /* FactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactModel.swift; sourceTree = "<group>"; };
-		199B89AB20EA3297007F3A0B /* FactTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableCell.swift; sourceTree = "<group>"; };
-		199B89AD20EA38EB007F3A0B /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		199B89AF20EA562D007F3A0B /* FactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
+		199B89B720EA5D47007F3A0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		199B89B820EA5D47007F3A0B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		199B89BA20EA5D47007F3A0B /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		199B89BF20EA5D47007F3A0B /* FactTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactTableCell.swift; sourceTree = "<group>"; };
+		199B89C020EA5D47007F3A0B /* FactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
+		199B89C120EA5D47007F3A0B /* FactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
+		199B89C420EA5D47007F3A0B /* FactModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactModel.swift; sourceTree = "<group>"; };
+		199B89C520EA5D47007F3A0B /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		199B89C620EA5D47007F3A0B /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		436BF61558EDF7DE310D5C2C /* Pods-FactsTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FactsTaskTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FactsTaskTests/Pods-FactsTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		43CA66F9F81B38CE5B8E614C /* Pods-FactsTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FactsTaskUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FactsTaskUITests/Pods-FactsTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		63A04DBF19FFF43D0B6970F4 /* Pods_FactsTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FactsTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,13 +139,11 @@
 			isa = PBXGroup;
 			children = (
 				199B896820E9F580007F3A0B /* AppDelegate.swift */,
-				199B899D20EA0554007F3A0B /* Model */,
-				199B899E20EA0554007F3A0B /* NetworkLayer */,
-				199B899F20EA0554007F3A0B /* ViewControllers */,
-				199B896F20E9F580007F3A0B /* Assets.xcassets */,
+				199B89B920EA5D47007F3A0B /* Helpers */,
+				199B89BB20EA5D47007F3A0B /* Module */,
+				199B89C220EA5D47007F3A0B /* NetworkLayer */,
+				199B89B620EA5D47007F3A0B /* Resources */,
 				199B897120E9F580007F3A0B /* LaunchScreen.storyboard */,
-				199B897420E9F580007F3A0B /* Info.plist */,
-				199B89AD20EA38EB007F3A0B /* AppManager.swift */,
 			);
 			path = FactsTask;
 			sourceTree = "<group>";
@@ -167,39 +166,73 @@
 			path = FactsTaskUITests;
 			sourceTree = "<group>";
 		};
-		199B899D20EA0554007F3A0B /* Model */ = {
+		199B89B620EA5D47007F3A0B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				199B89A620EA1750007F3A0B /* FactModel.swift */,
+				199B89B720EA5D47007F3A0B /* Assets.xcassets */,
+				199B89B820EA5D47007F3A0B /* Info.plist */,
 			);
-			path = Model;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		199B899E20EA0554007F3A0B /* NetworkLayer */ = {
+		199B89B920EA5D47007F3A0B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				199B89A220EA064B007F3A0B /* Networking.swift */,
-				199B89A420EA0660007F3A0B /* WebServices.swift */,
+				199B89BA20EA5D47007F3A0B /* AppManager.swift */,
 			);
-			path = NetworkLayer;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
-		199B899F20EA0554007F3A0B /* ViewControllers */ = {
+		199B89BB20EA5D47007F3A0B /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				199B89AA20EA326A007F3A0B /* CustomCell */,
-				199B89A020EA0554007F3A0B /* FactsViewController.swift */,
+				199B89BC20EA5D47007F3A0B /* FactList */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		199B89BC20EA5D47007F3A0B /* FactList */ = {
+			isa = PBXGroup;
+			children = (
+				199B89BD20EA5D47007F3A0B /* ViewControllers */,
+			);
+			path = FactList;
+			sourceTree = "<group>";
+		};
+		199B89BD20EA5D47007F3A0B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				199B89C120EA5D47007F3A0B /* FactsViewController.swift */,
+				199B89BE20EA5D47007F3A0B /* CustomCell */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		199B89AA20EA326A007F3A0B /* CustomCell */ = {
+		199B89BE20EA5D47007F3A0B /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
-				199B89AB20EA3297007F3A0B /* FactTableCell.swift */,
-				199B89AF20EA562D007F3A0B /* FactViewModel.swift */,
+				199B89BF20EA5D47007F3A0B /* FactTableCell.swift */,
+				199B89C020EA5D47007F3A0B /* FactViewModel.swift */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		199B89C220EA5D47007F3A0B /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				199B89C320EA5D47007F3A0B /* Model */,
+				199B89C520EA5D47007F3A0B /* Networking.swift */,
+				199B89C620EA5D47007F3A0B /* WebServices.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		199B89C320EA5D47007F3A0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				199B89C420EA5D47007F3A0B /* FactModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3FE468C575D843080D6A80F6 /* Frameworks */ = {
@@ -328,8 +361,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				199B89C720EA5D48007F3A0B /* Assets.xcassets in Resources */,
 				199B897320E9F580007F3A0B /* LaunchScreen.storyboard in Resources */,
-				199B897020E9F580007F3A0B /* Assets.xcassets in Resources */,
+				199B89C820EA5D48007F3A0B /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,14 +538,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				199B89B020EA562D007F3A0B /* FactViewModel.swift in Sources */,
-				199B89AE20EA38EB007F3A0B /* AppManager.swift in Sources */,
-				199B89A320EA064B007F3A0B /* Networking.swift in Sources */,
+				199B89CB20EA5D48007F3A0B /* FactViewModel.swift in Sources */,
 				199B896920E9F580007F3A0B /* AppDelegate.swift in Sources */,
-				199B89AC20EA3297007F3A0B /* FactTableCell.swift in Sources */,
-				199B89A520EA0660007F3A0B /* WebServices.swift in Sources */,
-				199B89A720EA1750007F3A0B /* FactModel.swift in Sources */,
-				199B89A120EA0554007F3A0B /* FactsViewController.swift in Sources */,
+				199B89C920EA5D48007F3A0B /* AppManager.swift in Sources */,
+				199B89CD20EA5D48007F3A0B /* FactModel.swift in Sources */,
+				199B89CA20EA5D48007F3A0B /* FactTableCell.swift in Sources */,
+				199B89CC20EA5D48007F3A0B /* FactsViewController.swift in Sources */,
+				199B89CF20EA5D48007F3A0B /* WebServices.swift in Sources */,
+				199B89CE20EA5D48007F3A0B /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,7 +705,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FactsTask/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FactsTask/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = app.FactsTask;
@@ -687,7 +721,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FactsTask/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FactsTask/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = app.FactsTask;

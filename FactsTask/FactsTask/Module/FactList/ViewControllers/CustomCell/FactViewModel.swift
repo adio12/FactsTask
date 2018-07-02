@@ -8,13 +8,15 @@
 
 import Foundation
 
-struct FactViewModel {
+struct TableCellModel {
     
     var description : String!
     var imgURL : String!
     var title : String!
     
-    init(model: FactsModel) {
-        self.description =
+    init(model : FactsModel) {
+        self.description = model.description
+        self.title = model.title
+        self.imgURL = model.imgURL
     }
 }

@@ -22,10 +22,11 @@ struct WebServiceUrl {
 
 class WebServices  {
     
+    // Get fact list
     class func getFactList(completionBlock : @escaping (ListModel)->(),errorBlock: @escaping (Error) -> ()) {
         
         Networking.Get(urlString: WebServiceUrl.actURL, successBlock: { (response) in
-            
+                        
             if let list = response.dictionary {
                 
                 let model = ListModel(withData: list)
@@ -38,7 +39,7 @@ class WebServices  {
         }
     }
     
-    
+    // Get image from url
     class func getImageFromURL(urlString : String, completionBlock: @escaping (UIImage)->()) {
         
         if let img = AppManager.shared.cache.object(forKey: urlString as AnyObject) as? UIImage {

@@ -10,11 +10,13 @@ import UIKit
 
 class FactsViewController: UIViewController {
     
+    //MARK: - Properties
+
     var tableView : UITableView!
     var factList = [FactsModel]()
-    
     var refreshControl = UIRefreshControl()
     
+    //MARK: - View life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,7 @@ class FactsViewController: UIViewController {
         getList()
     }
     
+    // Get list from json
     func getList() {
         WebServices.getFactList(completionBlock: { (listModel) in
             DispatchQueue.main.async {
@@ -62,7 +65,7 @@ class FactsViewController: UIViewController {
     }
 }
 
-
+//MARK: - UITableViewDataSource, UITableViewDelegate
 extension FactsViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,17 +74,21 @@ extension FactsViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let model = factList[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FactTableCell else {
             return UITableViewCell()
         }
-        cell.configureCell(with: model)
-        cell.displayImage()
+        cell.setDataSource(datasource: self, index: indexPath.row)
         return cell
     }
+}
+
+//MARK: - CellDatasource
+
+extension FactsViewController : CellDatasource {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+    func datasourceOfCell(for index: Int) -> TableCellModel {
+        let model = factList[index]
+        return TableCellModel(model: model)
     }
 }
 

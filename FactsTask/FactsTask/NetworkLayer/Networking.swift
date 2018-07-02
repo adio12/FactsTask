@@ -64,6 +64,7 @@ class Networking {
         task.resume()
     }
     
+    //Download file from url
     class func download(urlString : String, successBlock :@escaping (URL)->(), errorBlock :@escaping (Error)->()) {
         
         guard let url = URL(string: urlString) else {
