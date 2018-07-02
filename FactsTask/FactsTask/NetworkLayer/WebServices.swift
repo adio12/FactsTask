@@ -23,7 +23,11 @@ class WebServices  {
     
     class func getFactList() {
         
-        Networking.Get(urlString: WebServiceUrl.actURL)
+        Networking.Get(urlString: WebServiceUrl.actURL, successBlock: { (response) in
+            print(response)
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
 }
 

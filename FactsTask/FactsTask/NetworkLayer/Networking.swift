@@ -11,7 +11,7 @@ import Foundation
 class Networking {
     //    static let shared = Networking()
     
-    class func Get(urlString: String)  {
+    class func Get(urlString: String, successBlock :@escaping (Any)->(), errorBlock : @escaping (Error)->())  {
         
         guard let url = URL(string: urlString) else {
             return
@@ -27,8 +27,7 @@ class Networking {
         let task = session.dataTask(with: urlRequest) { (dataResponse, urlResponse, error) in
             
             if let err = error {
-                
-                print(err)
+                errorBlock(err)
                 return
             }
             
@@ -37,17 +36,39 @@ class Networking {
                 
                 if let err = resp.1 {
                     
-                    print(err.localizedDescription)
+                    if let str = String(data: data, encoding: String.Encoding.isoLatin1) {
+                        let jsonResp = convertStringToJson(str: str, error: err)
+                        
+                        if let error = jsonResp.1 {
+                            
+                            errorBlock(error)
+                            
+                        } else {
+                            if let resp = jsonResp.0 {
+                                successBlock(resp)
+                            }
+                        }
+                        
+                    } else {
+                        errorBlock(err)
+                    }
                     
                 } else {
                     if let resp = resp.0 {
-                        
-                        print(resp)
+                        successBlock(resp)
                     }
                 }
             }
         }
         task.resume()
+    }
+    
+    private class func convertStringToJson(str: String, error: Error) ->  (Any?, Error?){
+        if let dataObj = str.data(using: String.Encoding.utf8) {
+            return getJSONFromData(data: dataObj)
+        } else {
+            return (nil,error)
+        }
     }
     
     private class func getJSONFromData(data: Data) -> (Any?, Error?) {
