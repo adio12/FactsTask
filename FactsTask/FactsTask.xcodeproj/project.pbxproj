@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		199B896920E9F580007F3A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B896820E9F580007F3A0B /* AppDelegate.swift */; };
-		199B896B20E9F580007F3A0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B896A20E9F580007F3A0B /* ViewController.swift */; };
-		199B896E20E9F580007F3A0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199B896C20E9F580007F3A0B /* Main.storyboard */; };
 		199B897020E9F580007F3A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199B896F20E9F580007F3A0B /* Assets.xcassets */; };
 		199B897320E9F580007F3A0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199B897120E9F580007F3A0B /* LaunchScreen.storyboard */; };
 		199B897E20E9F580007F3A0B /* FactsTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B897D20E9F580007F3A0B /* FactsTaskTests.swift */; };
 		199B898920E9F580007F3A0B /* FactsTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B898820E9F580007F3A0B /* FactsTaskUITests.swift */; };
+		199B89A120EA0554007F3A0B /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89A020EA0554007F3A0B /* FactsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +35,6 @@
 /* Begin PBXFileReference section */
 		199B896520E9F580007F3A0B /* FactsTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FactsTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		199B896820E9F580007F3A0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		199B896A20E9F580007F3A0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		199B896D20E9F580007F3A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		199B896F20E9F580007F3A0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		199B897220E9F580007F3A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		199B897420E9F580007F3A0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +44,7 @@
 		199B898420E9F580007F3A0B /* FactsTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FactsTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		199B898820E9F580007F3A0B /* FactsTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsTaskUITests.swift; sourceTree = "<group>"; };
 		199B898A20E9F580007F3A0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		199B89A020EA0554007F3A0B /* FactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				199B896820E9F580007F3A0B /* AppDelegate.swift */,
-				199B896A20E9F580007F3A0B /* ViewController.swift */,
-				199B896C20E9F580007F3A0B /* Main.storyboard */,
+				199B899D20EA0554007F3A0B /* Model */,
+				199B899E20EA0554007F3A0B /* NetworkLayer */,
+				199B899F20EA0554007F3A0B /* ViewControllers */,
 				199B896F20E9F580007F3A0B /* Assets.xcassets */,
 				199B897120E9F580007F3A0B /* LaunchScreen.storyboard */,
 				199B897420E9F580007F3A0B /* Info.plist */,
@@ -123,6 +122,28 @@
 				199B898A20E9F580007F3A0B /* Info.plist */,
 			);
 			path = FactsTaskUITests;
+			sourceTree = "<group>";
+		};
+		199B899D20EA0554007F3A0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		199B899E20EA0554007F3A0B /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		199B899F20EA0554007F3A0B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				199B89A020EA0554007F3A0B /* FactsViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +255,6 @@
 			files = (
 				199B897320E9F580007F3A0B /* LaunchScreen.storyboard in Resources */,
 				199B897020E9F580007F3A0B /* Assets.xcassets in Resources */,
-				199B896E20E9F580007F3A0B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				199B896B20E9F580007F3A0B /* ViewController.swift in Sources */,
 				199B896920E9F580007F3A0B /* AppDelegate.swift in Sources */,
+				199B89A120EA0554007F3A0B /* FactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +316,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		199B896C20E9F580007F3A0B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				199B896D20E9F580007F3A0B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		199B897120E9F580007F3A0B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -428,6 +440,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FactsTask/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = app.FactsTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -442,6 +455,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FactsTask/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = app.FactsTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
