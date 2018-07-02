@@ -15,6 +15,8 @@ class FactsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.yellow
+        
+        WebServices.getFactList()
     }
 
     override func didReceiveMemoryWarning() {
