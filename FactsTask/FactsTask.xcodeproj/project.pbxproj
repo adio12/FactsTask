@@ -15,6 +15,7 @@
 		199B89A120EA0554007F3A0B /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89A020EA0554007F3A0B /* FactsViewController.swift */; };
 		199B89A320EA064B007F3A0B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89A220EA064B007F3A0B /* Networking.swift */; };
 		199B89A520EA0660007F3A0B /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89A420EA0660007F3A0B /* WebServices.swift */; };
+		199B89A720EA1750007F3A0B /* FactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89A620EA1750007F3A0B /* FactModel.swift */; };
 		20E394A8534B11B5AD6D0705 /* Pods_FactsTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A04DBF19FFF43D0B6970F4 /* Pods_FactsTaskTests.framework */; };
 		B57CD56D11647945AA5B2C8B /* Pods_FactsTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96505B2A1FAF77A8340DC4F0 /* Pods_FactsTask.framework */; };
 		B66D1B57F4813469AD6BAD8F /* Pods_FactsTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 191E55B45437BDC00B62DCF7 /* Pods_FactsTaskUITests.framework */; };
@@ -53,6 +54,7 @@
 		199B89A020EA0554007F3A0B /* FactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
 		199B89A220EA064B007F3A0B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		199B89A420EA0660007F3A0B /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
+		199B89A620EA1750007F3A0B /* FactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactModel.swift; sourceTree = "<group>"; };
 		436BF61558EDF7DE310D5C2C /* Pods-FactsTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FactsTaskTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FactsTaskTests/Pods-FactsTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		43CA66F9F81B38CE5B8E614C /* Pods-FactsTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FactsTaskUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FactsTaskUITests/Pods-FactsTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		63A04DBF19FFF43D0B6970F4 /* Pods_FactsTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FactsTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 		199B899D20EA0554007F3A0B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				199B89A620EA1750007F3A0B /* FactModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				199B89A320EA064B007F3A0B /* Networking.swift in Sources */,
 				199B896920E9F580007F3A0B /* AppDelegate.swift in Sources */,
 				199B89A520EA0660007F3A0B /* WebServices.swift in Sources */,
+				199B89A720EA1750007F3A0B /* FactModel.swift in Sources */,
 				199B89A120EA0554007F3A0B /* FactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

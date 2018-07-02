@@ -7,18 +7,17 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class Networking {
-    //    static let shared = Networking()
     
-    class func Get(urlString: String, successBlock :@escaping (Any)->(), errorBlock : @escaping (Error)->())  {
+    class func Get(urlString: String, successBlock :@escaping (JSON)->(), errorBlock : @escaping (Error)->())  {
         
-        guard let url = URL(string: urlString) else {
-            return
-        }
+        let url = URL(string: urlString)
+        var urlRequest = URLRequest(url: url!)
         
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
+        urlRequest.httpMethod = "Get"
+        
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.timeoutIntervalForRequest = 60.0
         sessionConfig.timeoutIntervalForResource = 60.0
@@ -45,7 +44,8 @@ class Networking {
                             
                         } else {
                             if let resp = jsonResp.0 {
-                                successBlock(resp)
+                                successBlock(JSON(resp))
+                                
                             }
                         }
                         
@@ -55,7 +55,7 @@ class Networking {
                     
                 } else {
                     if let resp = resp.0 {
-                        successBlock(resp)
+                        successBlock(JSON(resp))
                     }
                 }
             }

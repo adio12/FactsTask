@@ -14,15 +14,30 @@ class FactsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.yellow
+        getList()
         
-        WebServices.getFactList()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func getList() {
+        WebServices.getFactList(completionBlock: { (listModel) in
+            
+            print(listModel.title)
+            
+            for element in listModel.rowList {
+                print(element.title)
+            }
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+
     
 
     /*

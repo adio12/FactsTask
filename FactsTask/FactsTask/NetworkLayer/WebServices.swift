@@ -21,12 +21,19 @@ struct WebServiceUrl {
 
 class WebServices  {
     
-    class func getFactList() {
+    class func getFactList(completionBlock : @escaping (ListModel)->(),errorBlock: @escaping (Error) -> ()) {
         
         Networking.Get(urlString: WebServiceUrl.actURL, successBlock: { (response) in
-            print(response)
+            
+            if let list = response.dictionary {
+                
+                let model = ListModel(withData: list)
+                completionBlock(model)
+                
+            }
         }) { (error) in
-            print(error.localizedDescription)
+            
+            errorBlock(error)
         }
     }
 }
