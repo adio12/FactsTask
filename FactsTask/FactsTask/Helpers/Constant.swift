@@ -18,6 +18,7 @@ struct Constant {
     static let kSomethingWentWrong = "Something went wrong. Please try again later"
     
     static let kNoNetworkConnection = "Your internet connection appears to be slow, Please check your connection."
-
     
+    static let kAlertTitle = "Alert"
+
 }
