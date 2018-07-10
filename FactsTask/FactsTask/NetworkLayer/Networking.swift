@@ -8,7 +8,6 @@
 
 import Foundation
 import SwiftyJSON
-import UIKit
 
 class Networking {
     
@@ -21,17 +20,15 @@ class Networking {
             
             return
         }
-            
-
-        
+                    
         let url = URL(string: urlString)
         var urlRequest = URLRequest(url: url!)
         
         urlRequest.httpMethod = "Get"
         
         let sessionConfig = URLSessionConfiguration.default
-        sessionConfig.timeoutIntervalForRequest = 60.0
-        sessionConfig.timeoutIntervalForResource = 60.0
+        sessionConfig.timeoutIntervalForRequest = 30.0
+        sessionConfig.timeoutIntervalForResource = 30.0
         
         let session = URLSession(configuration: sessionConfig)
         let task = session.dataTask(with: urlRequest) { (dataResponse, urlResponse, error) in

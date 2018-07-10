@@ -35,9 +35,7 @@ struct ListModel {
         
         self.rowList = factList
     }
-    
 }
-
 
 
 struct FactsModel {
