@@ -11,33 +11,54 @@ import UIKit
 class FactsViewController: UIViewController {
     
     //MARK: - Properties
-
+    
     var tableView : UITableView!
-    var factList = [FactsModel]()
     var refreshControl = UIRefreshControl()
+    var dataSource = FactDataSource()
     
     //MARK: - View life cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         getList()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    private func setupSubviews(){
         
-        tableView = UITableView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height - 64))
+        tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(tableView)
-        tableView.estimatedRowHeight = 150 
+        addConstraint()
+        tableView.estimatedRowHeight = 150
         tableView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(reloadTableData), for: UIControlEvents.valueChanged)
         tableView.allowsSelection = false
         tableView.register(FactTableCell.self, forCellReuseIdentifier: Constant.factCellIdentifier)
-
         tableView.delegate = self
         tableView.dataSource = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    private func addConstraint() {
+        
+        let table = "tableView"
+        
+        let views: [String: Any] = [table: tableView]
+        
+        var allConstraints: [NSLayoutConstraint] = []
+        
+        let tableHorizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[\(table)]-0-|", options: NSLayoutFormatOptions.directionLeadingToTrailing, metrics: nil, views: views)
+        allConstraints.append(contentsOf: tableHorizontalConstraints)
+        
+        let tableVerticalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[\(table)]-0-|", options: NSLayoutFormatOptions.directionLeadingToTrailing, metrics: nil, views: views)
+        allConstraints.append(contentsOf: tableVerticalConstraint)
+        
+        self.view.addConstraints(allConstraints)
     }
     
     @objc func reloadTableData(){
@@ -52,10 +73,16 @@ class FactsViewController: UIViewController {
                 self.title = listModel.title ?? ""
                 
                 if let list = listModel.rowList {
-                    self.factList = list
-                    self.tableView.reloadData()
+                    
+                    self.dataSource.factList = list
+                    if let _ = self.tableView {
+                        self.tableView.reloadData()
+                    } else {
+                        self.setupSubviews()
+                        self.tableView.reloadData()
+                    }
                 }
-
+                
             }
         }) { (error) in
             self.refreshControl.endRefreshing()
@@ -68,22 +95,33 @@ class FactsViewController: UIViewController {
 extension FactsViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return factList.count
+        return dataSource.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let model = factList[indexPath.row]
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.factCellIdentifier, for: indexPath) as? FactTableCell else {
             return UITableViewCell()
         }
-        
-        cell.datasource = FactViewModel(model: model)
-        
+        cell.datasource = dataSource.dataForCell(index: indexPath.row)
         return cell
     }
 }
 
+class FactDataSource {
+    var factList = [FactsModel]()
+    
+    func numberOfRows() -> Int {
+        return factList.count
+    }
+    
+    func dataForCell(index: Int) -> FactViewModel {
+        let model = factList[index]
+        let viewModel = FactViewModel(model: model)
+        return viewModel
+    }
+}
 
 extension FactViewModel {
     
@@ -93,4 +131,3 @@ extension FactViewModel {
         self.imgURL = model.imgURL
     }
 }
-
