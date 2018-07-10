@@ -73,22 +73,24 @@ extension FactsViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let model = factList[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.factCellIdentifier, for: indexPath) as? FactTableCell else {
             return UITableViewCell()
         }
-        cell.setDataSource(datasource: self, index: indexPath.row)
+        
+        cell.datasource = FactViewModel(model: model)
+        
         return cell
     }
 }
 
-//MARK: - CellDatasource
 
-extension FactsViewController : CellDatasource {
+extension FactViewModel {
     
-    func datasourceOfCell(for index: Int) -> TableCellModel {
-        let model = factList[index]
-        return TableCellModel(model: model)
+    init(model : FactsModel) {
+        self.description = model.description
+        self.title = model.title
+        self.imgURL = model.imgURL
     }
 }
-
 

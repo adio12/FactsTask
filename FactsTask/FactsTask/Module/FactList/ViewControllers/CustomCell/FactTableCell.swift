@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol CellDatasource {
-    func datasourceOfCell(for index : Int) -> TableCellModel
-}
-
 class FactTableCell: UITableViewCell {
     
     enum SubViews : String {
@@ -21,8 +17,15 @@ class FactTableCell: UITableViewCell {
     private var titleLabel = UILabel()
     private var descriptionLabel = UILabel()
     private var imgView = UIImageView()
-    private var datasource : CellDatasource?
     private var imgUrlString : String!
+    
+    
+    var datasource : FactViewModel = FactViewModel() {
+        
+        didSet {
+            setCellValues()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -69,14 +72,18 @@ class FactTableCell: UITableViewCell {
     }
     
     
-    func setDataSource(datasource : CellDatasource, index: Int) {
-        self.datasource = datasource
-        let model = datasource.datasourceOfCell(for: index)
-        configureCell(with: model)
+    private func setCellValues() {
+        titleLabel.text = datasource.title ?? "Untitled"
+        descriptionLabel.text = datasource.description
+        imgView.backgroundColor = UIColor.lightGray
+        if let urlString = datasource.imgURL, !urlString.isEmpty {
+            self.imgUrlString = urlString
+        }
+        displayImage()
     }
-    
+
     // Retrieve/download images
-    func displayImage() {
+    private func displayImage() {
         
         if let urlString = imgUrlString, !urlString.isEmpty {
             DispatchQueue.global(qos: .background).async {
@@ -91,19 +98,6 @@ class FactTableCell: UITableViewCell {
             }
         }
     }
-
-    
-    private func configureCell (with info: TableCellModel) {
-        titleLabel.text = info.title ?? "Untitled"
-        descriptionLabel.text = info.description
-        imgView.backgroundColor = UIColor.lightGray
-        
-        if let urlString = info.imgURL, !urlString.isEmpty {
-            self.imgUrlString = urlString
-        }
-        displayImage()
-    }
-
     
     // constraint to set position of views
     private func addConstraint() {
