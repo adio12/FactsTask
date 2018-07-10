@@ -20,6 +20,7 @@ class FactsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         reloadTableData()
     }
     
@@ -75,7 +76,8 @@ class FactsViewController: UIViewController {
         }) { (errorString) in
             
             self.refreshControl.endRefreshing()
-            print(errorString)
+            
+            CommonMethods.showAlertViewController(viewController: self, withAlertTitle: Constant.kAlertTitle, withAlertMessage: errorString)
         }
     }
     
