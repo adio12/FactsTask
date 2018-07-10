@@ -20,7 +20,7 @@ class FactsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getList()
+        reloadTableData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,9 +47,7 @@ class FactsViewController: UIViewController {
     private func addConstraint() {
         
         let table = "tableView"
-        
         let views: [String: Any] = [table: tableView]
-        
         var allConstraints: [NSLayoutConstraint] = []
         
         let tableHorizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[\(table)]-0-|", options: NSLayoutFormatOptions.directionLeadingToTrailing, metrics: nil, views: views)
@@ -62,33 +60,26 @@ class FactsViewController: UIViewController {
     }
     
     @objc func reloadTableData(){
-        getList()
-    }
-    
-    // Get list from json
-    func getList() {
-        WebServices.getFactList(completionBlock: { (listModel) in
+        
+        dataSource.getList(completionBlock: {
             DispatchQueue.main.async {
                 self.refreshControl.endRefreshing()
-                self.title = listModel.title ?? ""
-                
-                if let list = listModel.rowList {
-                    
-                    self.dataSource.factList = list
-                    if let _ = self.tableView {
-                        self.tableView.reloadData()
-                    } else {
-                        self.setupSubviews()
-                        self.tableView.reloadData()
-                    }
+                if let _ = self.tableView {
+                    self.tableView.reloadData()
+                } else {
+                    self.setupSubviews()
+                    self.tableView.reloadData()
                 }
-                
             }
-        }) { (error) in
+            
+        }) { (errorString) in
+            
             self.refreshControl.endRefreshing()
-            print(error.localizedDescription)
+            print(errorString)
         }
     }
+    
+    
 }
 
 //MARK: - UITableViewDataSource, UITableViewDelegate
@@ -110,7 +101,25 @@ extension FactsViewController : UITableViewDataSource, UITableViewDelegate {
 }
 
 class FactDataSource {
+    
     var factList = [FactsModel]()
+    var title = ""
+    
+    // Get list from json
+    func getList(completionBlock: @escaping ()->(), errorBlock: @escaping (String)->()) {
+        WebServices.getFactList(completionBlock: { (listModel) in
+            
+            self.title = listModel.title ?? ""
+            if let list = listModel.rowList {
+                self.factList = list
+            }
+            completionBlock()
+            
+        }) { (error) in
+            
+            errorBlock(error.localizedDescription)
+        }
+    }
     
     func numberOfRows() -> Int {
         return factList.count
