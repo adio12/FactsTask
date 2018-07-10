@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class FactsViewController: UIViewController {
     
     //MARK: - Properties
@@ -20,8 +21,9 @@ class FactsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         reloadTableData()
+        self.view.backgroundColor = UIColor.white
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,26 +64,40 @@ class FactsViewController: UIViewController {
     
     @objc func reloadTableData(){
         
+        func reloadTable(){
+            if let _ = self.tableView {
+                self.tableView.reloadData()
+            } else {
+                self.setupSubviews()
+                self.tableView.reloadData()
+            }
+        }
+        
         dataSource.getList(completionBlock: {
             DispatchQueue.main.async {
+                
+                self.title = self.dataSource.title
                 self.refreshControl.endRefreshing()
-                if let _ = self.tableView {
-                    self.tableView.reloadData()
-                } else {
-                    self.setupSubviews()
-                    self.tableView.reloadData()
-                }
+
+                reloadTable()
             }
             
         }) { (errorString) in
             
-            self.refreshControl.endRefreshing()
+            DispatchQueue.main.async {
+                if self.refreshControl.isRefreshing {
+                    
+                    self.refreshControl.endRefreshing()
+                    self.tableView?.contentOffset.y = 0
+
+                } else {
+                    reloadTable()
+                }
+            }
             
             CommonMethods.showAlertViewController(viewController: self, withAlertTitle: Constant.kAlertTitle, withAlertMessage: errorString)
         }
     }
-    
-    
 }
 
 //MARK: - UITableViewDataSource, UITableViewDelegate
@@ -102,43 +118,3 @@ extension FactsViewController : UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-class FactDataSource {
-    
-    var factList = [FactsModel]()
-    var title = ""
-    
-    // Get list from json
-    func getList(completionBlock: @escaping ()->(), errorBlock: @escaping (String)->()) {
-        WebServices.getFactList(completionBlock: { (listModel) in
-            
-            self.title = listModel.title ?? ""
-            if let list = listModel.rowList {
-                self.factList = list
-            }
-            completionBlock()
-            
-        }) { (error) in
-            
-            errorBlock(error.localizedDescription)
-        }
-    }
-    
-    func numberOfRows() -> Int {
-        return factList.count
-    }
-    
-    func dataForCell(index: Int) -> FactViewModel {
-        let model = factList[index]
-        let viewModel = FactViewModel(model: model)
-        return viewModel
-    }
-}
-
-extension FactViewModel {
-    
-    init(model : FactsModel) {
-        self.description = model.description
-        self.title = model.title
-        self.imgURL = model.imgURL
-    }
-}

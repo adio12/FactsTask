@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1920546220F5110E008A8470 /* FactTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1920545F20F5110E008A8470 /* FactTableCell.swift */; };
+		1920546320F5110E008A8470 /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1920546020F5110E008A8470 /* FactViewModel.swift */; };
+		1920546520F51161008A8470 /* FactDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1920546420F51161008A8470 /* FactDataSource.swift */; };
 		199B896920E9F580007F3A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B896820E9F580007F3A0B /* AppDelegate.swift */; };
 		199B897320E9F580007F3A0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199B897120E9F580007F3A0B /* LaunchScreen.storyboard */; };
 		199B897E20E9F580007F3A0B /* FactsTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B897D20E9F580007F3A0B /* FactsTaskTests.swift */; };
@@ -14,8 +17,6 @@
 		199B89C720EA5D48007F3A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199B89B720EA5D47007F3A0B /* Assets.xcassets */; };
 		199B89C820EA5D48007F3A0B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 199B89B820EA5D47007F3A0B /* Info.plist */; };
 		199B89C920EA5D48007F3A0B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89BA20EA5D47007F3A0B /* AppManager.swift */; };
-		199B89CA20EA5D48007F3A0B /* FactTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89BF20EA5D47007F3A0B /* FactTableCell.swift */; };
-		199B89CB20EA5D48007F3A0B /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89C020EA5D47007F3A0B /* FactViewModel.swift */; };
 		199B89CC20EA5D48007F3A0B /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89C120EA5D47007F3A0B /* FactsViewController.swift */; };
 		199B89CD20EA5D48007F3A0B /* FactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89C420EA5D47007F3A0B /* FactModel.swift */; };
 		199B89CE20EA5D48007F3A0B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B89C520EA5D47007F3A0B /* Networking.swift */; };
@@ -48,6 +49,9 @@
 
 /* Begin PBXFileReference section */
 		191E55B45437BDC00B62DCF7 /* Pods_FactsTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FactsTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1920545F20F5110E008A8470 /* FactTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactTableCell.swift; sourceTree = "<group>"; };
+		1920546020F5110E008A8470 /* FactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
+		1920546420F51161008A8470 /* FactDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactDataSource.swift; sourceTree = "<group>"; };
 		199B896520E9F580007F3A0B /* FactsTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FactsTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		199B896820E9F580007F3A0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		199B897220E9F580007F3A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,8 +64,6 @@
 		199B89B720EA5D47007F3A0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		199B89B820EA5D47007F3A0B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		199B89BA20EA5D47007F3A0B /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		199B89BF20EA5D47007F3A0B /* FactTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactTableCell.swift; sourceTree = "<group>"; };
-		199B89C020EA5D47007F3A0B /* FactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
 		199B89C120EA5D47007F3A0B /* FactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
 		199B89C420EA5D47007F3A0B /* FactModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactModel.swift; sourceTree = "<group>"; };
 		199B89C520EA5D47007F3A0B /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
@@ -119,6 +121,31 @@
 				6F3BDDF9D4E685114A358854 /* Pods-FactsTaskUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		1920545D20F5110E008A8470 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				1920545E20F5110E008A8470 /* CustomCell */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		1920545E20F5110E008A8470 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				1920545F20F5110E008A8470 /* FactTableCell.swift */,
+				1920546020F5110E008A8470 /* FactViewModel.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		1920546120F5110E008A8470 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				1920546420F51161008A8470 /* FactDataSource.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		199B895C20E9F580007F3A0B = {
@@ -213,19 +240,11 @@
 		199B89BD20EA5D47007F3A0B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1920546120F5110E008A8470 /* model */,
+				1920545D20F5110E008A8470 /* views */,
 				199B89C120EA5D47007F3A0B /* FactsViewController.swift */,
-				199B89BE20EA5D47007F3A0B /* CustomCell */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		199B89BE20EA5D47007F3A0B /* CustomCell */ = {
-			isa = PBXGroup;
-			children = (
-				199B89BF20EA5D47007F3A0B /* FactTableCell.swift */,
-				199B89C020EA5D47007F3A0B /* FactViewModel.swift */,
-			);
-			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		199B89C220EA5D47007F3A0B /* NetworkLayer */ = {
@@ -558,18 +577,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				199B89CB20EA5D48007F3A0B /* FactViewModel.swift in Sources */,
+				1920546320F5110E008A8470 /* FactViewModel.swift in Sources */,
 				199B896920E9F580007F3A0B /* AppDelegate.swift in Sources */,
+				1920546220F5110E008A8470 /* FactTableCell.swift in Sources */,
 				19ED060520EA657E009EA7D3 /* Reachablity.swift in Sources */,
 				19ED060720EA6613009EA7D3 /* CommonMethods.swift in Sources */,
 				19ED060020EA62A9009EA7D3 /* Constant.swift in Sources */,
 				199B89C920EA5D48007F3A0B /* AppManager.swift in Sources */,
 				199B89CD20EA5D48007F3A0B /* FactModel.swift in Sources */,
-				199B89CA20EA5D48007F3A0B /* FactTableCell.swift in Sources */,
 				199B89CC20EA5D48007F3A0B /* FactsViewController.swift in Sources */,
 				19ED060420EA657E009EA7D3 /* Reach.swift in Sources */,
 				199B89CF20EA5D48007F3A0B /* WebServices.swift in Sources */,
 				199B89CE20EA5D48007F3A0B /* Networking.swift in Sources */,
+				1920546520F51161008A8470 /* FactDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
